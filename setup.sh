@@ -1,9 +1,9 @@
 #! /bin/bash
 
 if command -v apt; then
-    APT=apt
+    APT='apt -y'
 else
-    APT=apt-get
+    APT='apt-get -y'
 fi
 
 echo "Installing stuff..."
