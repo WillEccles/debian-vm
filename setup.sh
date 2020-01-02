@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 if command -v apt > /dev/null; then
     APT='apt -y -qq'
 elif command -v apt-get > /dev/null; then
@@ -16,6 +18,12 @@ echo "Adding user cactus to sudoers..."
 echo "cactus    ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 rm -f /home/cactus/.bashrc /home/cactus/.bash_profile /home/cactus/.profile
+
+echo "Downloading keymap..."
+curl -sS "https://raw.githubusercontent.com/WillEccles/debian-vm/master/fixescape.map" > /usr/local/share/keymaps/fixescape.map
+
+echo "Enabling keymap..."
+echo 'KMAP="/usr/local/share/keymaps/fixescape.map"' >> /etc/default/keyboard
 
 echo "Downloading user profiles/configs..."
 curl -sS "https://raw.githubusercontent.com/WillEccles/debian-vm/master/.profile" > /home/cactus/.profile
