@@ -33,3 +33,5 @@ curl -sS "https://raw.githubusercontent.com/WillEccles/debian-vm/master/.bashrc"
 chown cactus /home/cactus/.profile
 chown cactus /home/cactus/.bash_profile
 chown cactus /home/cactus/.bashrc
+
+echo "Done! Please reboot the system to ensure all changes are applied."
