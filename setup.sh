@@ -10,7 +10,7 @@ else
 fi
 
 echo "Installing stuff..."
-$APT install sudo curl gcc make cmake vim vifm
+$APT install sudo build-essential curl cmake vim vifm
 
 echo "Adding user cactus to sudoers..."
 echo "cactus    ALL=(ALL:ALL) ALL" >> /etc/sudoers
